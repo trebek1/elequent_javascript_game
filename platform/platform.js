@@ -115,7 +115,6 @@ function Coin(pos){
 Coin.prototype.type = 'coin'; 
 
 var simpleLevel = new Level(simpleLevelPlan); 
-console.log(simpleLevel.width, ' by ', simpleLevel.height); 
 
 // helper function to create elements 
 function elt(name, className){
@@ -159,8 +158,8 @@ DOMDisplay.prototype.drawActors = function(){
 		var rect = wrap.appendChild(elt("div", "actor " + actor.type)); 
 		rect.style.width = actor.size.x * scale + 'px';
 		rect.style.height = actor.size.y * scale + 'px';
-		rect.style.left = actor.size.x * scale + 'px';
-		rect.style.top = actor.size.y * scale + 'px';
+		rect.style.left = actor.pos.x * scale + 'px';
+		rect.style.top = actor.pos.y * scale + 'px';
 	});
 	return wrap; 
 }
