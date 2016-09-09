@@ -241,9 +241,7 @@ window.onload = function(){
 		for(var i = 0; i< this.actors.length; i++){
 			var other = this.actors[i];
 
-			if(
-			other!== actor && 
-			actor.pos.x + actor.size.x > other.pos.x &&
+			if(other!== actor && actor.pos.x + actor.size.x > other.pos.x &&
 			actor.pos.x < other.pos.x + other.size.x &&
 			actor.pos.y + actor.size.y > other.pos.y &&
 			actor.pos.y < other.pos.y + other.size.y){
@@ -352,7 +350,7 @@ window.onload = function(){
 		if(type ==="lava" && this.status === null){
 			this.status = "lost"; 
 			this.finishDelay = 1; 
-		}else if(type = "coin"){
+		}else if(type === "coin"){
 			this.actors = this.actors.filter(function(other){
 				return other !== actor;
 			});
@@ -375,7 +373,7 @@ window.onload = function(){
 		function handler(event){
 			if(codes.hasOwnProperty(event.keyCode)){
 				var down = event.type === "keydown";
-				pressed[codes[event.keyCode]] = 'down'; 
+				pressed[codes[event.keyCode]] = down; 
 				event.preventDefault(); 
 			}
 		}
@@ -420,7 +418,7 @@ window.onload = function(){
 
 	function runGame(plans, Display){
 		function startLevel(n){
-			runLevel(new Level(plans[n]), Display, function(statue){
+			runLevel(new Level(plans[n]), Display, function(status){
 				if(status === 'lost'){
 					startLevel(n);
 				}else if(n < plans.length -1){
@@ -572,7 +570,7 @@ var GAME_LEVELS = [
 ];
 
 
-runGame(GAME_LEVELS	, DOMDisplay); 
+runGame(GAME_LEVELS	,DOMDisplay); 
 }// end of window onload will be extra 
 
 
