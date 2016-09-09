@@ -8,6 +8,7 @@
 	<p style="text-align: center">
 		<img src="Doge-Meme-Blank-05.jpg" style="position: relative">
 	</p>
+	<div id = "example"> alex </div>
 	<script> 
 
 		var doge = document.querySelector("img"); 
@@ -23,10 +24,29 @@
 			doge.style.top = (Math.sin(angle) * 20) + "px"; 
 			doge.style.left = (Math.cos(angle) * 200) + "px"; 
 
-			requestAnimationFrame(animate); 
+			window.requestAnimationFrame(animate); 
 		}
-		requestAnimationFrame(animate);
+		window.requestAnimationFrame(animate);
 
+
+	</script>
+
+	<script>
+
+	var start = null;
+	var element = document.getElementById("example");
+	element.style.position = 'absolute';
+
+	function step(timestamp) {
+	  if (!start) start = timestamp;
+	  var progress = timestamp - start;
+	  element.style.left = Math.min(progress/10, 2000) + "px";
+	  if (progress < 6000) {
+	    window.requestAnimationFrame(step);
+	  }
+	}
+
+	window.requestAnimationFrame(step);
 
 	</script>
 </body>
