@@ -1,4 +1,5 @@
 // 207/208 for original view 
+// code for debugging http://eloquentjavascript.net/code/#15
 
 window.onload = function(){
 
@@ -39,7 +40,7 @@ window.onload = function(){
 				var Actor = actorChars[ch]; 
 				if(Actor){
 					this.actors.push(new Actor(new Vector(x,y),ch)); 
-				}else if( ch === 'X'){
+				}else if( ch === 'x'){
 					fieldType = 'wall';
 				}else if(ch === '!'){
 					fieldType = 'lava';
@@ -571,7 +572,7 @@ var GAME_LEVELS = [
 ];
 
 
-runGame(GAME_LEVELS, DOMDisplay); 
+runGame(GAME_LEVELS	, DOMDisplay); 
 }// end of window onload will be extra 
 
 
