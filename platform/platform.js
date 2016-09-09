@@ -1,14 +1,14 @@
 window.onload = function(){
 
-	var simpleLevelPlan = [
+var simpleLevelPlan = [
 "                      ",
-"					   ",
+"                      ",
 "  X              = X  ",
-"  X		  o o	X  ",
+"  X          o o   X  ",
 "  X @       XXXXX  X  ",
-"  XXXXX			X  ",
+"  XXXXX            X  ",
 "      X!!!!!!!!!!!!X  ",
-"	   XXXXXXXXXXXXXX  ",
+"      XXXXXXXXXXXXXX  ",
 "                      "
 ];
 
